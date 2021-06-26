@@ -1,1 +1,19 @@
-<p>cards works!</p>
+
+<h1>Users</h1>
+<div class="container">
+  <div class="row"> 
+      <div class="card col-md-3 my-3"  *ngFor="let row of rows">
+    <!--Verificamos si el usuario tiene imagen de perfil, sino le asignamos una por defecto-->        
+        <div *ngIf = "row.avatar_url == ''; else elseBlock"> <img [src]="imagen" alt=""></div>
+        <ng-template #elseBlock>
+          <img [src]="row.avatar_url" class="card-img-top" alt="...">
+        </ng-template>
+    <!----------------------------------------------------------------------------------->   
+        <div class="card-body">
+          <p><b>Usuario:</b> {{row.login}}</p>
+          <p><b>Github: </b><a [href]="row.html_url">{{row.html_url}}</a></p>
+          <p><b>Repositorios: </b> <a href="/repositories">Click aqui</a></p>
+        </div>
+      </div>
+  </div>
+</div>

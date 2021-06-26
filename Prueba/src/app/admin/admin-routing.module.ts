@@ -5,7 +5,11 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
+    redirectTo: 'cards'
+  },
+  {
+    path: 'cards',
     component: CardsComponent
   },
   {
